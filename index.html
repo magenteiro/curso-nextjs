@@ -22,12 +22,13 @@
         <h2>Seja Bem-vindo</h2>
         <div id="app"></div>
     </main>
-    <script type="text/javascript">
-        const app=document.getElementById('app')
+    <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.development.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.19.2/babel.min.js"></script>
 
-        const texto = document.createTextNode('Vamos começar?!')
-
-        app.appendChild(texto)
+    <script type="text/jsx">
+        const app = document.getElementById('app')
+        ReactDOM.render(<p>Ola React!</p>, app)
         
     </script>
 </body>
