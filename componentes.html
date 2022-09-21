@@ -16,18 +16,23 @@
         const app = document.getElementById('app')
 
         function Cabecalho(props) {
-            console.log(props)
             return (<nav>
                 <div>
                     <strong>{props.titulo}</strong> - 
                     <span>
                         <a href="docs.html">Docs</a> ·
                         <a href="sobre.html">Sobre</a> ·
-                        <a href="https://github.com/magenteiro/curso-nextjs">Repositório</a>
+                        <a href="https://github.com/magenteiro/curso-nextjs">Repositório</a> · 
+                        <Href link="https://magenteiro.com" texto="Cursos Magento"/>
                     </span>
                 </div>
             </nav>)
         }
+
+        function Href(props) {
+            return <a href={props.link}>{props.texto}</a>
+        }
+        
         const root = ReactDOM.createRoot(app)
         root.render(<Cabecalho titulo="Curso Next.JS"/>)
     </script>
