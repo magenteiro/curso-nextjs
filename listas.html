@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=968, initial-scale=1.0">
+    <title>Olá Mundo! 🌍</title>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.development.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.19.2/babel.min.js"></script>
+    <script type="text/jsx">
+        const app = document.getElementById('app')
+
+        function Cabecalho(props) {
+            return (<nav>
+                <div>
+                    <strong>{props.titulo}</strong> - 
+                    <span>
+                        <a href="docs.html">Docs</a> ·
+                        <a href="sobre.html">Sobre</a> ·
+                        <a href="https://github.com/magenteiro/curso-nextjs">Repositório</a> · 
+                        <Href link="https://magenteiro.com" texto="Cursos Magento"/>
+                    </span>
+                </div>
+            </nav>)
+        }
+
+        function Href(props) {
+            return <a href={props.link}>{props.texto}</a>
+        }
+        
+
+        function ListaCursos(){
+            const cursos = ['Wordpress', 'Magento', 'React']
+
+            return (
+                <ul>
+                    {/* arrow function */}
+                    {cursos.map((curso) => {
+                        return <li>{curso}</li>
+                    })}
+
+                    {/* function normal */}
+                    {cursos.map(function (curso) {
+                        return <li>{curso}</li>
+                    })}
+                    
+                </ul>
+            )
+        }
+        const root = ReactDOM.createRoot(app)
+        root.render(<><Cabecalho titulo="Curso Next.JS"/><ListaCursos/></>)
+    </script>
+</body>
+</html>
