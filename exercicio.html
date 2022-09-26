@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=968, initial-scale=1.0">
+    <title>Olá Mundo! 🌍</title>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.development.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.19.2/babel.min.js"></script>
+    <script type="text/jsx">
+        const app = document.getElementById('app')
+
+        function Cabecalho(props) {
+            return (<nav>
+                <div>
+                    <strong>{props.titulo}</strong> - 
+                    <span>
+                        <a href="docs.html">Docs</a> ·
+                        <a href="sobre.html">Sobre</a> ·
+                        <a href="https://github.com/magenteiro/curso-nextjs">Repositório</a> · 
+                        <Href link="https://magenteiro.com" texto="Cursos Magento"/>
+                    </span>
+                </div>
+            </nav>)
+        }
+
+        function Href(props) {
+            return <a href={props.link}>{props.texto}</a>
+        }
+        
+
+        function ListaCursos({ contadorItens, setContadorItens }){
+            const cursos = ['Wordpress', 'Magento', 'React']
+
+            return (
+                <ul>
+                    {/* function normal */}
+                    {cursos.map(function (curso) {
+                        return <li key={curso}>{curso} <LikeButton/> <AddButton contadorItens={contadorItens} setContadorItens={setContadorItens}/></li>
+                    })}
+                    
+                </ul>
+            )
+        }
+
+        function LikeButton(){
+            const [likeCount, setLikeCount] = React.useState(0)
+
+            function handleClick(){
+                setLikeCount(likeCount + 1)
+            }
+            return (
+                <button onClick={handleClick}>Like ({likeCount})</button>
+            )
+        }
+
+        function AddButton({ contadorItens, setContadorItens }){
+        
+            function handleClick(){
+                setContadorItens(contadorItens + 1)
+            }
+            return (
+                <button onClick={handleClick}>Adicionar</button>
+            )
+        }
+
+        function Carrinho({atual}){
+            return (<span>Contém <strong>{atual}</strong> no carrinho</span>)
+        }
+
+        function Page(){
+            const [contadorItens, setContadorItens] = React.useState(0)
+            return (
+                <>
+                <Cabecalho titulo="Curso Next.JS"/>
+                <ListaCursos contadorItens={contadorItens} setContadorItens={setContadorItens}/>
+                <Carrinho atual={contadorItens}/>
+                </>
+            )
+        }
+        
+        const root = ReactDOM.createRoot(app)
+        root.render(<Page/>)
+    </script>
+</body>
+</html>
