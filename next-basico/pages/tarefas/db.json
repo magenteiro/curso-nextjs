@@ -1,0 +1,7 @@
+{
+    "tarefas": [
+        {"title": "Terminar exercício do curso de NEXT.Js", "id": 1},
+        {"title": "Deixar um review bacana do curso se eu gostar", "id": 2},
+        {"title": "Tirar da gaveta aquele projeto esquecido", "id": 3}
+    ]
+}
