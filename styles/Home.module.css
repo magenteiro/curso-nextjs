@@ -1,7 +1,9 @@
 .container {
   padding: 0 2rem;
 }
-
+body{
+  color: #000;
+}
 .main {
   min-height: 100vh;
   padding: 4rem 0;

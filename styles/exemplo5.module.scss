@@ -1,0 +1,16 @@
+.container {
+    background-color: #bab6b6;
+    h1 {
+        color: #a72727;
+    }
+    p {
+        color: #17ae58;
+    }
+    a{
+        color: blue;
+        &:hover{
+            color: yellow;
+        }
+    }
+}
+
