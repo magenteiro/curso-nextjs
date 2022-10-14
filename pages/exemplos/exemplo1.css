@@ -1,0 +1,7 @@
+/* 
+CSS Global, pois foi inserido em /pages/_app.js. 
+Os estilos deste arquivo afetam todas as páginas e componentes da aplicação. 
+*/
+.corAzul {
+    color: rgb(15, 15, 162);
+}
