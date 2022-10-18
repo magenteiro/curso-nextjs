@@ -1,4 +1,4 @@
-import './exemplo1.css'
+// import './exemplo1.css' //movido pra dentro de _app.js
 export default function exemplo1() {
     return (
         <div>
