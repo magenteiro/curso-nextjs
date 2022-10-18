@@ -5,9 +5,9 @@ export default function hookEffect() {
 
     useEffect(()=>{
         console.log('renderizou ou mudou valor')
-        return () => {console.log('destriui')}
+        // return () => {console.log('destruiu')} //opcioinal
     }, [tamanho])
-    
+
     return (
         <>
             <h1>Camisa da Seleção</h1>
