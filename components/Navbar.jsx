@@ -40,8 +40,8 @@ const ProfileDropDown = (props) => {
             <ul className={`bg-white top-12 right-0 mt-5 space-y-5 lg:absolute lg:border lg:rounded-md lg:text-sm lg:w-52 lg:shadow-md lg:space-y-0 lg:mt-0 ${state ? '' : 'lg:hidden'}`}>
                 {
                     navigation.map((item, idx) => (
-                        <li>
-                            <a key={idx} className="block text-gray-600 lg:hover:bg-gray-50 lg:p-2.5" href={item.path}>
+                        <li key={idx}>
+                            <a className="block text-gray-600 lg:hover:bg-gray-50 lg:p-2.5" href={item.path}>
                                 {item.title}
                             </a>
                         </li>
@@ -52,7 +52,7 @@ const ProfileDropDown = (props) => {
     )
 }
 
-export default () => {
+export default function Navbar() {
 
     const [menuState, setMenuState] = useState(false)
 

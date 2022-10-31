@@ -1,15 +1,12 @@
-import Navbar from "../components/Navbar"
 import HeroHome from "../components/HeroHome"
 import ProductList from "../components/ProductList"
-import Footer from "../components/Footer"
+import Layout from "../components/layouts/UmaColuna"
 
 export default function Index(){
   return (
-    <>
-      <Navbar/>
+    <Layout>
       <HeroHome/>
       <ProductList/>
-      <Footer/>
-    </>
+    </Layout>
   )
 }
