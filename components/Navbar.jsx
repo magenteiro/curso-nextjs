@@ -8,9 +8,9 @@ const ProfileDropDown = (props) => {
     const profileRef = useRef()
 
     const navigation = [
-        { title: "Minha Conta", path: "javascript:void(0)" },
-        { title: "Meus Pedidos", path: "javascript:void(0)" },
-        { title: "Finalizar Sessão", path: "javascript:void(0)" },
+        { title: "Minha Conta", path: "#" },
+        { title: "Meus Pedidos", path: "#" },
+        { title: "Finalizar Sessão", path: "#" },
     ]
 
     
@@ -40,8 +40,8 @@ const ProfileDropDown = (props) => {
             <ul className={`bg-white top-12 right-0 mt-5 space-y-5 lg:absolute lg:border lg:rounded-md lg:text-sm lg:w-52 lg:shadow-md lg:space-y-0 lg:mt-0 ${state ? '' : 'lg:hidden'}`}>
                 {
                     navigation.map((item, idx) => (
-                        <li>
-                            <a key={idx} className="block text-gray-600 lg:hover:bg-gray-50 lg:p-2.5" href={item.path}>
+                        <li key={idx}>
+                            <a className="block text-gray-600 lg:hover:bg-gray-50 lg:p-2.5" href={item.path}>
                                 {item.title}
                             </a>
                         </li>
@@ -58,16 +58,16 @@ export default () => {
 
   // Replace javascript:void(0) path with your path
   const navigation = [
-      { title: "Customers", path: "javascript:void(0)" },
-      { title: "Careers", path: "javascript:void(0)" },
-      { title: "Guides", path: "javascript:void(0)" },
-      { title: "Partners", path: "javascript:void(0)" },
+      { title: "Customers", path: "#" },
+      { title: "Careers", path: "#" },
+      { title: "Guides", path: "#" },
+      { title: "Partners", path: "#" },
   ]
     return (
         <nav className="bg-white border-b">
             <div className="flex items-center space-x-8 py-3 px-4 max-w-screen-xl mx-auto">
                 <div className="flex-none lg:flex-initial">
-                    <a href="javascript:void(0)">
+                    <a href="#">
                         <img
                             src="https://www.floatui.com/logo.svg" 
                             width={120} 
@@ -90,7 +90,7 @@ export default () => {
                             }
                         </ul>
                         <ProfileDropDown 
-                            class="mt-5 pt-5 border-t lg:hidden"
+                            className="mt-5 pt-5 border-t lg:hidden"
                         />
                     </div>
                     <div className="flex-1 flex items-center justify-end space-x-2 sm:space-x-6">
@@ -105,7 +105,7 @@ export default () => {
                             />
                         </form>
                         <ProfileDropDown 
-                            class="hidden lg:block"
+                            className="hidden lg:block"
                         />
                         <button 
                             className="outline-none text-gray-400 block lg:hidden"
