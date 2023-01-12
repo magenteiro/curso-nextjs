@@ -1,5 +1,6 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import styles from "../styles/globals.css";
 
 export default function RootLayout({children}) {
     return (
@@ -10,8 +11,8 @@ export default function RootLayout({children}) {
             <main className="w-8/12 mx-auto">
                 {children}
             </main>
-        </body>
         <Footer/>
+        </body>
         </html>
     )
 }
