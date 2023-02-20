@@ -1,13 +1,46 @@
 "use client";
 import {useState} from "react";
+import {deleteCookie, setCookie} from "cookies-next";
+import {useRouter} from "next/navigation";
 
 export default function Login(){
     const [msgError, setMsgError] = useState(false)
-    
+    const router = useRouter()
     const handleLogin = async (event) => {
         event.preventDefault()
         const login = event.target.email.value
         const password = event.target.password.value
+        const query = `mutation GenerateCustomerToken($email: String!, $password: String!) {
+  generateCustomerToken(email: $email, password: $password) {
+    token
+  }
+}`
+        const variables = {
+            "email": login,
+            "password": password
+        }
+        const customerTokenReq = await fetch(process.env.NEXT_PUBLIC_GRAPHQL_URL, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                query: query,
+                variables: variables
+            })
+        })
+        
+        const token = await customerTokenReq.json()
+        if(token.errors != null){
+            setMsgError(token.errors[0].message)
+        }
+        deleteCookie('customerToken')
+        deleteCookie('customerEmail')
+        if(token.data?.generateCustomerToken != null){
+            setMsgError(false)
+            setCookie('customerToken', token.data.generateCustomerToken.token)
+            setCookie('customerEmail', login)
+            router.push('/')
+            router.refresh()
+        }
         
     }
     return <>
