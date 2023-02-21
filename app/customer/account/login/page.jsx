@@ -2,6 +2,7 @@
 import {useState} from "react";
 import {deleteCookie, setCookie} from "cookies-next";
 import {useRouter} from "next/navigation";
+import fetcher from "../../../../helpers/fetcher";
 
 export default function Login(){
     const [msgError, setMsgError] = useState(false)
@@ -19,16 +20,8 @@ export default function Login(){
             "email": login,
             "password": password
         }
-        const customerTokenReq = await fetch(process.env.NEXT_PUBLIC_GRAPHQL_URL, {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({
-                query: query,
-                variables: variables
-            })
-        })
-        
-        const token = await customerTokenReq.json()
+        const token = await fetcher(query, variables, [], 'no-cache')
+        // const token = await tokenReq.json()
         if(token.errors != null){
             setMsgError(token.errors[0].message)
         }
