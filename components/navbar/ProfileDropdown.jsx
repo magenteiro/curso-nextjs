@@ -15,7 +15,7 @@ export default function ProfileDropDown(props) {
     const navigation = [
         { title: "Minha Conta", path: "#" },
         { title: "Meus Pedidos", path: "#" },
-        { title: "Finalizar Sessão", path: "#" },
+        { title: "Finalizar Sessão", path: "/api/logout" },
     ]
 
 
@@ -31,7 +31,7 @@ export default function ProfileDropDown(props) {
     useEffect(() => {
         if(getCookie('customerToken')){
             setIsLoggedIn(true)
-            const emailHash = md5Hash(getCookie('customerEmail').toLowerCase())
+            const emailHash = md5Hash(getCookie('customerEmail')?.toLowerCase())
             setImgGravatar('https://s.gravatar.com/avatar/' + emailHash + '?s=80&d=mp')
         }
     }, [getCookie('customerToken')])
