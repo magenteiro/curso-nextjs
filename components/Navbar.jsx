@@ -10,7 +10,7 @@ export default function Navbar() {
         <nav className="bg-white border-b">
             <div className="flex items-center space-x-8 py-3 px-4 max-w-screen-xl mx-auto">
                 <div className="flex-none lg:flex-initial">
-                    <a href="#">
+                    <a href="/">
                         <img
                             src="https://www.floatui.com/logo.svg"
                             width={120}
