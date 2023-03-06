@@ -6,7 +6,7 @@ export default async function Categories() {
             {
                 categories.data.categoryList.map((item, idx) => (
                     <li key={idx} className="text-gray-600 hover:text-gray-900">
-                        <a href={item.url_path}>
+                        <a href={"/" + item.url_path}>
                             {item.name}
                         </a>
                     </li>
