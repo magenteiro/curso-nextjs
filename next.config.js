@@ -4,6 +4,9 @@ const nextConfig = {
     appDir: true,
   },
     reactStrictMode: true,
+    images: {
+        domains: ['i.imgur.com'],
+    }
 }
 
 module.exports = nextConfig
