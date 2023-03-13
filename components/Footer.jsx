@@ -1,13 +1,14 @@
 //importado de https://www.floatui.com/components/footers/
+import Image from "next/image";
+
 export default function Footer() {
     const year = new Date().getFullYear()
     return (
         <footer className="mx-auto  py-16 px-4 sm:py-24 sm:px-6  lg:px-8 bg-white dark:bg-gray-900">
             <div className="md:flex md:justify-between max-w-2xl lg:max-w-7xl mx-auto">
                 <div className="mb-6 md:mb-0">
-                    <a href="https://flowbite.com/" className="flex items-center">
-                        <img src="https://flowbite.com/docs/images/logo.svg" className="mr-3 h-8" alt="FlowBite Logo"/>
-                        <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+                    <a href="https://magenteiro.com/" className="flex items-center">
+                        <Image src='https://magento2.magenteiro.com/static/frontend/Magento/luma/en_US/images/logo.svg' alt='Luma store' width={120} height={50} className="mr-3 h-8" />
                     </a>
                 </div>
                 <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">

@@ -1,22 +1,24 @@
 //Componente importado parcialmente de https://www.floatui.com/components/heroes/
+import Link from "next/link";
+
 export default function HeroHome() {
   return (
     <section className="mt-24 mx-auto max-w-screen-xl pb-4 px-4 sm:px-8">
       <div className="text-center space-y-4">
-        <h1 className="text-gray-800 font-bold text-4xl md:text-5xl">
-          Confira as últimas novidades da
-          <span className="text-indigo-600"> Coleção Yoga Luma</span>
+        <h1 className="text-gray-800 font-bold text-3xl md:text-4xl">
+          Bem-vindo a nossa loja demo do <br/>
+          <Link href={`https://magenteiro.com/nextjs?utm_source=lojademonext&utm_campaign=mainbanner`}><span className="text-amber-900"> Curso de Next.js</span></Link>do Magenteiro.com
         </h1>
         <p className="text-gray-500 max-w-xl mx-auto leading-relaxed">
-          Roupas de yoga feitas sob medida para mulheres de todas as idades
+          Uma loja feita em Next.js 13 integrada ao Magento usando GraphQL
         </p>
       </div>
       <div className="mt-12 justify-center items-center space-y-3 sm:space-x-6 sm:space-y-0 sm:flex">
         <a
-          href="#"
+          href="https://magenteiro.com/nextjs?utm_source=lojademonext&utm_campaign=mainbanner"
           className="px-10 py-3.5 w-full bg-orange-600 text-white text-center rounded-md shadow-md block sm:w-auto"
         >
-          Espiar
+          Espiar curso
         </a>
         {/* <a
           href="javascript:void(0)"
