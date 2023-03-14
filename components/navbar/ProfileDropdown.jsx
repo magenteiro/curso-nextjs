@@ -47,10 +47,7 @@ export default function ProfileDropDown(props) {
                         className="w-full h-full rounded-full"
                     />
                 </button>}
-                <div className="lg:hidden">
-                    <span className="block">Micheal John</span>
-                    <span className="block text-sm text-gray-500">john@gmail.com</span>
-                </div>
+                
             </div>
             <ul className={`bg-white top-12 right-0 mt-5 space-y-5 lg:absolute lg:border lg:rounded-md lg:text-sm lg:w-52 lg:shadow-md lg:space-y-0 lg:mt-0 ${state ? '' : 'lg:hidden'}`}>
                 {
@@ -64,7 +61,7 @@ export default function ProfileDropDown(props) {
                 }
             </ul>
         </div>
-        <button className={`bg-blue-700 text-white p-2 rounded px-3 ${isLoggedIn ? 'hidden' : ''}`}><Link href={`/customer/account/login`}>Entrar</Link></button>
+        <button className={`bg-blue-700 text-white p-2 rounded px-3 ${isLoggedIn ? 'hidden' : ''}`} title={`Fazer login`}><Link href={`/customer/account/login`} title={`Fazer login`}>Entrar</Link></button>
         </>
     )
 }

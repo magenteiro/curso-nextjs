@@ -6,6 +6,7 @@ export default function ButtonNav() {
     const [menuState, setMenuState] = useState(false)
     
     return <button
+        title="Menu"
         className="outline-none text-gray-400 block lg:hidden"
         onClick={() => setMenuState(!menuState)}
     >

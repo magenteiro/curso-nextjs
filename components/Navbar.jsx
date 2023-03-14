@@ -12,7 +12,7 @@ export default function Navbar() {
             <div className="flex items-center space-x-8 py-3 px-4 max-w-screen-xl mx-auto">
                 <div className="flex-none lg:flex-initial">
                     <a href="/">
-                        <Image src='https://magento2.magenteiro.com/static/frontend/Magento/luma/en_US/images/logo.svg' alt='Luma store' width={120} height={50} />
+                        <Image src='https://magento2.magenteiro.com/static/frontend/Magento/luma/en_US/images/logo.svg' alt='Luma store' width={120} height={50} priority />
                     </a>
                 </div>
                 <div className="flex-1 flex items-center justify-between">

@@ -4,7 +4,7 @@ const nextConfig = {
   swcMinify: true,
   experimental: {appDir: true},
   images: {
-    domains: ['magento2.magenteiro.com']
+    domains: ['magento2.magenteiro.com','tailwindui.com']
   }
 }
 
